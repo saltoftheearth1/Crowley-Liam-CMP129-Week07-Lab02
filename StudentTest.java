@@ -1,39 +1,41 @@
-public class StudentTest {
 
+public class StudentTest {
     public static void main(String[] args) {
 
-        // PART 1: Mutable Student
-        // TODO: Create a MutableStudent object.
+        // testing the mutable student
+        MutableStudent student1 = new MutableStudent("liam", 16);
 
+        System.out.println("mutable student before changes:");
+        System.out.println("name: " + student1.getName());
+        System.out.println("age: " + student1.getAge());
 
-        // TODO: Display the student's original information.
+        // changing the same object with setters
+        student1.setName("john");
+        student1.setAge(17);
 
+        System.out.println("\nmutable student after changes:");
+        System.out.println("name: " + student1.getName());
+        System.out.println("age: " + student1.getAge());
 
-        // TODO: Use the setter methods to change the student's data.
+        // testing the immutable student
+        ImmutableStudent student2 = new ImmutableStudent("liam", 16);
 
+        System.out.println("\noriginal immutable student:");
+        System.out.println("name: " + student2.getName());
+        System.out.println("age: " + student2.getAge());
 
-        // TODO: Display the student again.
-        // Question: Did the SAME object change?
+        // immutable students have no setters so we make a new object
+        // student2.setAge(17); would not work
 
+        ImmutableStudent student3 = new ImmutableStudent("john", 17);
 
-        System.out.println();
+        System.out.println("\nnew immutable student:");
+        System.out.println("name: " + student3.getName());
+        System.out.println("age: " + student3.getAge());
 
-        // PART 2: Immutable Student
-        // TODO: Create an ImmutableStudent object.
-
-
-        // TODO: Display the student's information.
-
-
-        // Try to answer this in a comment:
-        // Why can you not change the ImmutableStudent object
-        // using setter methods?
-
-
-        // PART 3: Compare
-        // Add comments that answer:
-        // 1. Which class is mutable?
-        // 2. Which class is immutable?
-        // 3. What is the biggest difference you noticed?
+        // the original object still has the same values
+        System.out.println("\noriginal immutable student again:");
+        System.out.println("name: " + student2.getName());
+        System.out.println("age: " + student2.getAge());
     }
 }
